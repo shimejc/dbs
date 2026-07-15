@@ -1,102 +1,204 @@
-[
-  {
-    "admission":"240001",
-    "mobile":"9876543210",
-    "name":"Rahul Kumar",
-    "father":"Ramesh Kumar",
-    "course":"BSc",
-    "major1":"Mathematics",
-    "major2":"Physics",
-    "minor":"Computer Science"
-  },
-  {
-    "admission":"240002",
-    "mobile":"9876543211",
-    "name":"Anjali Singh",
-    "father":"Suresh Singh",
-    "course":"BA",
-    "major1":"Hindi",
-    "major2":"History",
-    "minor":"Education"
-  },
-  {
-    "admission":"240003",
-    "mobile":"9876543212",
-    "name":"Vikas Yadav",
-    "father":"Rajesh Yadav",
-    "course":"BCom",
-    "major1":"Commerce",
-    "major2":"Economics",
-    "minor":"Computer Applications"
-  },
-  {
-    "admission":"240004",
-    "mobile":"9876543213",
-    "name":"Neha Gupta",
-    "father":"Mukesh Gupta",
-    "course":"BSc",
-    "major1":"Chemistry",
-    "major2":"Botany",
-    "minor":"Zoology"
-  },
-  {
-    "admission":"240005",
-    "mobile":"9876543214",
-    "name":"Arjun Patel",
-    "father":"Mahesh Patel",
-    "course":"BA",
-    "major1":"Political Science",
-    "major2":"Geography",
-    "minor":"Economics"
-  },
-  {
-    "admission":"240006",
-    "mobile":"9876543215",
-    "name":"Pooja Verma",
-    "father":"Rajendra Verma",
-    "course":"MSc",
-    "major1":"Mathematics",
-    "major2":"",
-    "minor":""
-  },
-  {
-    "admission":"240007",
-    "mobile":"9876543216",
-    "name":"Deepak Singh",
-    "father":"Ajay Singh",
-    "course":"MA",
-    "major1":"English",
-    "major2":"",
-    "minor":""
-  },
-  {
-    "admission":"240008",
-    "mobile":"9876543217",
-    "name":"Ritika Sharma",
-    "father":"Sanjay Sharma",
-    "course":"MCom",
-    "major1":"Commerce",
-    "major2":"",
-    "minor":""
-  },
-  {
-    "admission":"240009",
-    "mobile":"9876543218",
-    "name":"Karan Mishra",
-    "father":"Dinesh Mishra",
-    "course":"MSc",
-    "major1":"Physics",
-    "major2":"",
-    "minor":""
-  },
-  {
-    "admission":"240010",
-    "mobile":"9876543219",
-    "name":"Sakshi Gupta",
-    "father":"Mukesh Gupta",
-    "course":"MA",
-    "major1":"History",
-    "major2":"",
-    "minor":""
-  }
-]
+{
+  "students": [
+    {
+      "admissionNumber": "2024001",
+      "name": "Aarav Sharma",
+      "fatherName": "Rajesh Sharma",
+      "class": "BA",
+      "level": "UG",
+      "major": "English",
+      "minor": "History",
+      "semester": 1
+    },
+    {
+      "admissionNumber": "2024002",
+      "name": "Priya Patel",
+      "fatherName": "Ramesh Patel",
+      "class": "BA",
+      "level": "UG",
+      "major": "Hindi",
+      "minor": "Sanskrit",
+      "semester": 1
+    },
+    {
+      "admissionNumber": "2024003",
+      "name": "Rahul Singh",
+      "fatherName": "Suresh Singh",
+      "class": "BA",
+      "level": "UG",
+      "major": "English",
+      "minor": "Political Science",
+      "semester": 1
+    },
+    {
+      "admissionNumber": "2024004",
+      "name": "Neha Gupta",
+      "fatherName": "Pankaj Gupta",
+      "class": "BA",
+      "level": "UG",
+      "major": "Hindi",
+      "minor": "Economics",
+      "semester": 1
+    },
+    {
+      "admissionNumber": "2024005",
+      "name": "Vikram Kumar",
+      "fatherName": "Sanjay Kumar",
+      "class": "BA",
+      "level": "UG",
+      "major": "English",
+      "minor": "Psychology",
+      "semester": 1
+    },
+    {
+      "admissionNumber": "2024006",
+      "name": "Ananya Reddy",
+      "fatherName": "Narendra Reddy",
+      "class": "BSc",
+      "level": "UG",
+      "major": "Physics",
+      "minor": "Mathematics",
+      "semester": 1
+    },
+    {
+      "admissionNumber": "2024007",
+      "name": "Siddharth Mehta",
+      "fatherName": "Deepak Mehta",
+      "class": "BSc",
+      "level": "UG",
+      "major": "Chemistry",
+      "minor": "Biology",
+      "semester": 1
+    },
+    {
+      "admissionNumber": "2024008",
+      "name": "Kavya Nair",
+      "fatherName": "Mohan Nair",
+      "class": "BSc",
+      "level": "UG",
+      "major": "Mathematics",
+      "minor": "Statistics",
+      "semester": 1
+    },
+    {
+      "admissionNumber": "2024009",
+      "name": "Arjun Desai",
+      "fatherName": "Kiran Desai",
+      "class": "BSc",
+      "level": "UG",
+      "major": "Physics",
+      "minor": "Computer Science",
+      "semester": 1
+    },
+    {
+      "admissionNumber": "2024010",
+      "name": "Meera Iyer",
+      "fatherName": "Gopal Iyer",
+      "class": "BSc",
+      "level": "UG",
+      "major": "Biology",
+      "minor": "Chemistry",
+      "semester": 1
+    },
+    {
+      "admissionNumber": "2024011",
+      "name": "Rohan Joshi",
+      "fatherName": "Vijay Joshi",
+      "class": "BCom",
+      "level": "UG",
+      "major": "Accountancy",
+      "minor": "Business Studies",
+      "semester": 1
+    },
+    {
+      "admissionNumber": "2024012",
+      "name": "Sneha Kulkarni",
+      "fatherName": "Mahesh Kulkarni",
+      "class": "BCom",
+      "level": "UG",
+      "major": "Economics",
+      "minor": "Accountancy",
+      "semester": 1
+    },
+    {
+      "admissionNumber": "2024013",
+      "name": "Amit Shah",
+      "fatherName": "Pradeep Shah",
+      "class": "BCom",
+      "level": "UG",
+      "major": "Business Studies",
+      "minor": "Economics",
+      "semester": 1
+    },
+    {
+      "admissionNumber": "2024014",
+      "name": "Pooja Jain",
+      "fatherName": "Ravi Jain",
+      "class": "BCom",
+      "level": "UG",
+      "major": "Accountancy",
+      "minor": "Economics",
+      "semester": 1
+    },
+    {
+      "admissionNumber": "2024015",
+      "name": "Kunal Malhotra",
+      "fatherName": "Ashok Malhotra",
+      "class": "BCom",
+      "level": "UG",
+      "major": "Business Studies",
+      "minor": "Accountancy",
+      "semester": 1
+    },
+    {
+      "admissionNumber": "2024016",
+      "name": "Dr. Sunita Verma",
+      "fatherName": "Rakesh Verma",
+      "class": "MA",
+      "level": "PG",
+      "major": "English Literature",
+      "minor": "Linguistics",
+      "semester": 1
+    },
+    {
+      "admissionNumber": "2024017",
+      "name": "Rajesh Kumar",
+      "fatherName": "Manoj Kumar",
+      "class": "MA",
+      "level": "PG",
+      "major": "Hindi Literature",
+      "minor": "Indian Culture",
+      "semester": 1
+    },
+    {
+      "admissionNumber": "2024018",
+      "name": "Dr. Neelam Singh",
+      "fatherName": "Vijay Singh",
+      "class": "MSc",
+      "level": "PG",
+      "major": "Physics",
+      "minor": "Astrophysics",
+      "semester": 1
+    },
+    {
+      "admissionNumber": "2024019",
+      "name": "Dr. Amit Verma",
+      "fatherName": "Suresh Verma",
+      "class": "MSc",
+      "level": "PG",
+      "major": "Chemistry",
+      "minor": "Biochemistry",
+      "semester": 1
+    },
+    {
+      "admissionNumber": "2024020",
+      "name": "Dr. Priyanka Gupta",
+      "fatherName": "Ramesh Gupta",
+      "class": "MCom",
+      "level": "PG",
+      "major": "Finance",
+      "minor": "International Business",
+      "semester": 1
+    }
+  ]
+}
