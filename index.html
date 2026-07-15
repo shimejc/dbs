@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration - JSON Based System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+        }
+
+        h1 {
+            text-align: center;
+            color: #0f0c29;
+            margin-bottom: 5px;
+            font-size: 32px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #333;
+            font-size: 14px;
+        }
+
+        .required {
+            color: #dc3545;
+            margin-left: 3px;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            font-size: 16px;
+            transition: all 0.3s;
+            background: #f8f9fa;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #302b63;
+            background: white;
+            box-shadow: 0 0 0 4px rgba(48, 43, 99, 0.1);
+        }
+
+        .row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #302b63 0%, #0f0c29 100%);
+            color: white;
+            border: none;
+            padding: 16px 30px;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 12px;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s;
+            letter-spacing: 1px;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(48, 43, 99, 0.3);
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .result-box {
+            margin-top: 30px;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            border-left: 5px solid #302b63;
+            display: none;
+        }
+
+        .result-box.show {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .student-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .student-card h3 {
+            color: #302b63;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 10px;
+        }
+
+        .student-card .detail-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .student-card .detail-row strong {
+            color: #555;
+        }
+
+        .student-card .detail-row span {
+            color: #0f0c29;
+            font-weight: 500;
+        }
+
+        .level-badge {
+            display: inline-block;
+            padding: 4px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-left: 10px;
+        }
+
+        .level-ug {
+            background: #e3f2fd;
+            color: #0d47a1;
+        }
+
+        .level-pg {
+            background: #fce4ec;
+            color: #b71c1c;
+        }
+
+        .whatsapp-section {
+            margin-top: 20px;
+        }
+
+        .whatsapp-section h4 {
+            color: #25D366;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 18px;
+        }
+
+        .whatsapp-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .whatsapp-item {
+            background: white;
+            padding: 12px 18px;
+            border-radius: 10px;
+            border-left: 4px solid #25D366;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+
+        .whatsapp-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.1);
+        }
+
+        .whatsapp-item .group-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .whatsapp-item .group-name {
+            font-weight: 600;
+            color: #0f0c29;
+            font-size: 14px;
+        }
+
+        .whatsapp-item .group-type {
+            font-size: 11px;
+            color: #888;
+        }
+
+        .whatsapp-item a {
+            color: #25D366;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 13px;
+            padding: 5px 15px;
+            border: 2px solid #25D366;
+            border-radius: 20px;
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+
+        .whatsapp-item a:hover {
+            background: #25D366;
+            color: white;
+        }
+
+        .json-box {
+            margin-top: 20px;
+            background: #0f0c29;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 12px;
+            overflow-x: auto;
+            font-size: 13px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .json-box pre {
+            margin: 0;
+            white-space: pre-wrap;
+            font-family: 'Courier New', monospace;
+        }
+
+        .error-msg {
+            color: #dc3545;
+            font-size: 14px;
+            margin-top: 8px;
+            display: none;
+            background: #fde8e8;
+            padding: 10px;
+            border-radius: 8px;
+            border-left: 4px solid #dc3545;
+        }
+
+        .error-msg.show {
+            display: block;
+        }
+
+        .success-msg {
+            color: #28a745;
+            font-size: 14px;
+            margin-top: 8px;
+            display: none;
+            background: #e8f5e9;
+            padding: 10px;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+        }
+
+        .success-msg.show {
+            display: block;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+        }
+
+        .loading .spinner {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #302b63;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 768px) {
+            .row {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 20px;
+            }
+
+            .whatsapp-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .student-card .detail-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎓 Student Registration System</h1>
+        <p class="subtitle">UG (BA/BSc/BCom) & PG (MA/MSc/MCom) - Semester 1</p>
+        
+        <div id="loadingMsg" class="loading">
+            <div class="spinner"></div>
+            <p>Loading student data...</p>
+        </div>
+        
+        <form id="studentForm" style="display: none;">
+            <div class="row">
+                <div class="form-group">
+                    <label>Admission Number <span class="required">*</span></label>
+                    <input type="text" id="admissionNumber" placeholder="e.g., 2024001" required>
+                </div>
+                <div class="form-group">
+                    <label>Mobile Number <span class="required">*</span></label>
+                    <input type="tel" id="mobileNumber" placeholder="Enter 10-digit number" required>
+                </div>
+            </div>
+
+            <button type="submit" class="btn">🔍 Get Details & WhatsApp Links</button>
+            
+            <div id="errorMsg" class="error-msg"></div>
+            <div id="successMsg" class="success-msg"></div>
+        </form>
+
+        <div id="resultBox" class="result-box">
+            <div id="studentCard" class="student-card"></div>
+            
+            <div class="whatsapp-section">
+                <h4>💬 WhatsApp Groups for this Student</h4>
+                <div id="whatsappLinks" class="whatsapp-grid"></div>
+            </div>
+
+            <div class="json-box">
+                <strong style="color: #f8f8f2;">📄 Generated JSON Data</strong>
+                <pre id="jsonOutput"></pre>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // =====================================================
+        // 📥 LOAD JSON DATA FROM FILES
+        // =====================================================
+        let STUDENT_DB = {};
+        let WHATSAPP_LINKS = {};
+
+        async function loadJSONData() {
+            try {
+                // Load students.json
+                const studentsResponse = await fetch('students.json');
+                if (!studentsResponse.ok) {
+                    throw new Error('students.json file not found!');
+                }
+                const studentsData = await studentsResponse.json();
+                
+                // Convert array to object with admissionNumber as key
+                studentsData.students.forEach(student => {
+                    STUDENT_DB[student.admissionNumber] = student;
+                });
+
+                // Load whatsapp-groups.json
+                const groupsResponse = await fetch('whatsapp-groups.json');
+                if (!groupsResponse.ok) {
+                    throw new Error('whatsapp-groups.json file not found!');
+                }
+                WHATSAPP_LINKS = await groupsResponse.json();
+
+                // Hide loading, show form
+                document.getElementById('loadingMsg').style.display = 'none';
+                document.getElementById('studentForm').style.display = 'block';
+                
+                console.log('✅ Data loaded successfully!');
+                console.log(`📚 ${Object.keys(STUDENT_DB).length} students loaded`);
+                
+            } catch (error) {
+                document.getElementById('loadingMsg').innerHTML = `
+                    <p style="color: #dc3545;">❌ Error loading data: ${error.message}</p>
+                    <p style="font-size: 12px; color: #888; margin-top: 10px;">
+                        Make sure students.json and whatsapp-groups.json files are in the same folder.
+                    </p>
+                `;
+            }
+        }
+
+        // Load data on page load
+        loadJSONData();
+
+        // =====================================================
+        // 🔍 LOGIC - Get WhatsApp Links for Student
+        // =====================================================
+        function getWhatsAppGroups(student) {
+            const groups = [];
+            const level = student.level; // 'UG' or 'PG'
+            const classType = student.class; // 'BA', 'BSc', 'BCom', 'MA', 'MSc', 'MCom'
+            const major = student.major;
+            const minor = student.minor;
+
+            // Get groups from JSON structure
+            const levelGroups = WHATSAPP_LINKS.whatsappGroups[level];
+            if (!levelGroups) return groups;
+
+            const classGroups = levelGroups[classType];
+            if (!classGroups) return groups;
+
+            // Add Major Subject Group
+            if (classGroups[major]) {
+                groups.push({
+                    type: 'Major Subject',
+                    subject: major,
+                    level: level,
+                    link: classGroups[major]
+                });
+            }
+
+            // Add Minor Subject Group
+            if (minor && classGroups[minor]) {
+                groups.push({
+                    type: 'Minor Subject',
+                    subject: minor,
+                    level: level,
+                    link: classGroups[minor]
+                });
+            }
+
+            return groups;
+        }
+
+        // =====================================================
+        // 📝 FORM SUBMISSION HANDLER
+        // =====================================================
+        document.getElementById('studentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const admissionNumber = document.getElementById('admissionNumber').value.trim();
+            const mobileNumber = document.getElementById('mobileNumber').value.trim();
+            
+            const errorMsg = document.getElementById('errorMsg');
+            const successMsg = document.getElementById('successMsg');
+            const resultBox = document.getElementById('resultBox');
+
+            // Hide previous messages
+            errorMsg.classList.remove('show');
+            successMsg.classList.remove('show');
+            resultBox.classList.remove('show');
+
+            // Validation
+            if (!admissionNumber || !mobileNumber) {
+                errorMsg.textContent = '⚠️ Admission Number and Mobile Number are required!';
+                errorMsg.classList.add('show');
+                return;
+            }
+
+            if (!/^\d{10}$/.test(mobileNumber)) {
+                errorMsg.textContent = '⚠️ Please enter a valid 10-digit mobile number!';
+                errorMsg.classList.add('show');
+                return;
+            }
+
+            // Check student in database
+            const student = STUDENT_DB[admissionNumber];
+            
+            if (!student) {
+                errorMsg.textContent = '❌ Student not found! Please check the admission number.';
+                errorMsg.classList.add('show');
+                return;
+            }
+
+            // Success - Show results
+            successMsg.textContent = '✅ Student found! Displaying details...';
+            successMsg.classList.add('show');
+
+            // Get WhatsApp groups
+            const groups = getWhatsAppGroups(student);
+
+            // Prepare JSON data
+            const jsonData = {
+                student: {
+                    admissionNumber: admissionNumber,
+                    mobileNumber: mobileNumber,
+                    name: student.name,
+                    fatherName: student.fatherName,
+                    class: student.class,
+                    level: student.level,
+                    majorSubject: student.major,
+                    minorSubject: student.minor,
+                    semester: `${student.semester}st Semester`
+                },
+                whatsappGroups: groups.map(g => ({
+                    type: g.type,
+                    subject: g.subject,
+                    level: g.level,
+                    link: g.link
+                })),
+                timestamp: new Date().toISOString()
+            };
+
+            // Display student details
+            displayStudentDetails(student, admissionNumber, mobileNumber);
+            
+            // Display WhatsApp links
+            displayWhatsAppLinks(groups);
+            
+            // Display JSON
+            document.getElementById('jsonOutput').textContent = JSON.stringify(jsonData, null, 2);
+            
+            // Show result box
+            resultBox.classList.add('show');
+            resultBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        // =====================================================
+        // 🖥️ DISPLAY FUNCTIONS
+        // =====================================================
+        function displayStudentDetails(student, admissionNumber, mobileNumber) {
+            const card = document.getElementById('studentCard');
+            
+            const levelBadge = student.level === 'UG' ? 
+                '<span class="level-badge level-ug">UG - Undergraduate</span>' : 
+                '<span class="level-badge level-pg">PG - Postgraduate</span>';
+
+            card.innerHTML = `
+                <h3>
+                    👤 Student Details 
+                    ${levelBadge}
+                </h3>
+                <div class="detail-row">
+                    <strong>Admission Number:</strong>
+                    <span>${admissionNumber}</span>
+                </div>
+                <div class="detail-row">
+                    <strong>Mobile Number:</strong>
+                    <span>${mobileNumber}</span>
+                </div>
+                <div class="detail-row">
+                    <strong>Student Name:</strong>
+                    <span>${student.name}</span>
+                </div>
+                <div class="detail-row">
+                    <strong>Father's Name:</strong>
+                    <span>${student.fatherName}</span>
+                </div>
+                <div class="detail-row">
+                    <strong>Class:</strong>
+                    <span>${student.class} (${student.level})</span>
+                </div>
+                <div class="detail-row">
+                    <strong>Major Subject:</strong>
+                    <span>${student.major}</span>
+                </div>
+                <div class="detail-row">
+                    <strong>Minor Subject:</strong>
+                    <span>${student.minor || 'None'}</span>
+                </div>
+                <div class="detail-row">
+                    <strong>Semester:</strong>
+                    <span>${student.semester}st Semester</span>
+                </div>
+            `;
+        }
+
+        function displayWhatsAppLinks(groups) {
+            const container = document.getElementById('whatsappLinks');
+            
+            if (groups.length === 0) {
+                container.innerHTML = `
+                    <div style="grid-column: 1/-1; text-align: center; color: #888; padding: 20px;">
+                        No WhatsApp groups available for this student.
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = groups.map(group => `
+                <div class="whatsapp-item">
+                    <div class="group-info">
+                        <span class="group-name">${group.subject}</span>
+                        <span class="group-type">${group.type} • ${group.level}</span>
+                    </div>
+                    <a href="${group.link}" target="_blank">Join →</a>
+                </div>
+            `).join('');
+        }
+
+        // =====================================================
+        // 🔄 AUTO-FILL ON ADMISSION NUMBER BLUR
+        // =====================================================
+        document.getElementById('admissionNumber').addEventListener('blur', function() {
+            const admissionNumber = this.value.trim();
+            const errorMsg = document.getElementById('errorMsg');
+            const successMsg = document.getElementById('successMsg');
+            
+            if (admissionNumber && STUDENT_DB[admissionNumber]) {
+                const student = STUDENT_DB[admissionNumber];
+                successMsg.textContent = 
+                    `✅ Student found: ${student.name} (${student.class} - ${student.level})`;
+                successMsg.classList.add('show');
+                errorMsg.classList.remove('show');
+            } else if (admissionNumber) {
+                errorMsg.textContent = 
+                    '❌ Student not found with this admission number!';
+                errorMsg.classList.add('show');
+                successMsg.classList.remove('show');
+            }
+        });
+    </script>
+</body>
+</html>
