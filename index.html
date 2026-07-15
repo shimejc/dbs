@@ -287,6 +287,20 @@
             display: block;
         }
 
+        .demo-note {
+            background: #fff3cd;
+            padding: 12px 18px;
+            border-radius: 10px;
+            border-left: 4px solid #ffc107;
+            margin-top: 15px;
+            font-size: 14px;
+            color: #856404;
+        }
+
+        .demo-note strong {
+            color: #664d03;
+        }
+
         @media (max-width: 768px) {
             .row {
                 grid-template-columns: 1fr;
@@ -311,6 +325,10 @@
         <h1>🎓 Student Registration System</h1>
         <p class="subtitle">UG (BA/BSc/BCom) & PG (MA/MSc/MCom) - Semester 1</p>
         
+        <div class="demo-note">
+            <strong>📌 Demo:</strong> Try <strong>2024001</strong> (UG - BA English) or <strong>2024016</strong> (PG - MA English Literature)
+        </div>
+        
         <form id="studentForm">
             <div class="row">
                 <div class="form-group">
@@ -319,7 +337,7 @@
                 </div>
                 <div class="form-group">
                     <label>Mobile Number <span class="required">*</span></label>
-                    <input type="tel" id="mobileNumber" placeholder="Enter 10-digit number" required>
+                    <input type="text" id="mobileNumber" placeholder="Enter 10-digit number" required maxlength="10">
                 </div>
             </div>
 
@@ -375,60 +393,67 @@
         };
 
         // =====================================================
-        // 💬 WHATSAPP GROUP LINKS (UG & PG Separate)
+        // 💬 WHATSAPP GROUP LINKS 
         // ⚠️ YAHAN APNI REAL LINKS DAALEIN
         // =====================================================
         const WHATSAPP_LINKS = {
-            // ===== UG GROUPS =====
-            'UG-BA-English': 'https://chat.whatsapp.com/UG-BA-English-Group-Link',
-            'UG-BA-Hindi': 'https://chat.whatsapp.com/UG-BA-Hindi-Group-Link',
-            'UG-BA-History': 'https://chat.whatsapp.com/UG-BA-History-Group-Link',
-            'UG-BA-Sanskrit': 'https://chat.whatsapp.com/UG-BA-Sanskrit-Group-Link',
-            'UG-BA-PoliticalScience': 'https://chat.whatsapp.com/UG-BA-PoliticalScience-Group-Link',
-            'UG-BA-Economics': 'https://chat.whatsapp.com/UG-BA-Economics-Group-Link',
-            'UG-BA-Psychology': 'https://chat.whatsapp.com/UG-BA-Psychology-Group-Link',
-            'UG-BSc-Physics': 'https://chat.whatsapp.com/UG-BSc-Physics-Group-Link',
-            'UG-BSc-Chemistry': 'https://chat.whatsapp.com/UG-BSc-Chemistry-Group-Link',
-            'UG-BSc-Mathematics': 'https://chat.whatsapp.com/UG-BSc-Mathematics-Group-Link',
-            'UG-BSc-Biology': 'https://chat.whatsapp.com/UG-BSc-Biology-Group-Link',
-            'UG-BSc-Statistics': 'https://chat.whatsapp.com/UG-BSc-Statistics-Group-Link',
-            'UG-BSc-ComputerScience': 'https://chat.whatsapp.com/UG-BSc-ComputerScience-Group-Link',
-            'UG-BCom-Accountancy': 'https://chat.whatsapp.com/UG-BCom-Accountancy-Group-Link',
-            'UG-BCom-BusinessStudies': 'https://chat.whatsapp.com/UG-BCom-BusinessStudies-Group-Link',
-            'UG-BCom-Economics': 'https://chat.whatsapp.com/UG-BCom-Economics-Group-Link',
+            // ===== UG - BA Groups =====
+            'UG-BA-English': 'https://chat.whatsapp.com/ABCDEFGHIJKLMNOPQRST',
+            'UG-BA-Hindi': 'https://chat.whatsapp.com/ABCDEFGHIJKLMNOPQRST',
+            'UG-BA-History': 'https://chat.whatsapp.com/ABCDEFGHIJKLMNOPQRST',
+            'UG-BA-Sanskrit': 'https://chat.whatsapp.com/ABCDEFGHIJKLMNOPQRST',
+            'UG-BA-PoliticalScience': 'https://chat.whatsapp.com/ABCDEFGHIJKLMNOPQRST',
+            'UG-BA-Economics': 'https://chat.whatsapp.com/ABCDEFGHIJKLMNOPQRST',
+            'UG-BA-Psychology': 'https://chat.whatsapp.com/ABCDEFGHIJKLMNOPQRST',
             
-            // ===== PG GROUPS =====
-            'PG-MA-EnglishLiterature': 'https://chat.whatsapp.com/PG-MA-EnglishLiterature-Group-Link',
-            'PG-MA-HindiLiterature': 'https://chat.whatsapp.com/PG-MA-HindiLiterature-Group-Link',
-            'PG-MA-Linguistics': 'https://chat.whatsapp.com/PG-MA-Linguistics-Group-Link',
-            'PG-MA-IndianCulture': 'https://chat.whatsapp.com/PG-MA-IndianCulture-Group-Link',
-            'PG-MSc-Physics': 'https://chat.whatsapp.com/PG-MSc-Physics-Group-Link',
-            'PG-MSc-Chemistry': 'https://chat.whatsapp.com/PG-MSc-Chemistry-Group-Link',
-            'PG-MSc-Astrophysics': 'https://chat.whatsapp.com/PG-MSc-Astrophysics-Group-Link',
-            'PG-MSc-Biochemistry': 'https://chat.whatsapp.com/PG-MSc-Biochemistry-Group-Link',
-            'PG-MCom-Finance': 'https://chat.whatsapp.com/PG-MCom-Finance-Group-Link',
-            'PG-MCom-InternationalBusiness': 'https://chat.whatsapp.com/PG-MCom-InternationalBusiness-Group-Link'
+            // ===== UG - BSc Groups =====
+            'UG-BSc-Physics': 'https://chat.whatsapp.com/ABCDEFGHIJKLMNOPQRST',
+            'UG-BSc-Chemistry': 'https://chat.whatsapp.com/ABCDEFGHIJKLMNOPQRST',
+            'UG-BSc-Mathematics': 'https://chat.whatsapp.com/ABCDEFGHIJKLMNOPQRST',
+            'UG-BSc-Biology': 'https://chat.whatsapp.com/ABCDEFGHIJKLMNOPQRST',
+            'UG-BSc-Statistics': 'https://chat.whatsapp.com/ABCDEFGHIJKLMNOPQRST',
+            'UG-BSc-ComputerScience': 'https://chat.whatsapp.com/ABCDEFGHIJKLMNOPQRST',
+            
+            // ===== UG - BCom Groups =====
+            'UG-BCom-Accountancy': 'https://chat.whatsapp.com/ABCDEFGHIJKLMNOPQRST',
+            'UG-BCom-BusinessStudies': 'https://chat.whatsapp.com/ABCDEFGHIJKLMNOPQRST',
+            'UG-BCom-Economics': 'https://chat.whatsapp.com/ABCDEFGHIJKLMNOPQRST',
+            
+            // ===== PG - MA Groups =====
+            'PG-MA-EnglishLiterature': 'https://chat.whatsapp.com/ABCDEFGHIJKLMNOPQRST',
+            'PG-MA-HindiLiterature': 'https://chat.whatsapp.com/ABCDEFGHIJKLMNOPQRST',
+            'PG-MA-Linguistics': 'https://chat.whatsapp.com/ABCDEFGHIJKLMNOPQRST',
+            'PG-MA-IndianCulture': 'https://chat.whatsapp.com/ABCDEFGHIJKLMNOPQRST',
+            
+            // ===== PG - MSc Groups =====
+            'PG-MSc-Physics': 'https://chat.whatsapp.com/ABCDEFGHIJKLMNOPQRST',
+            'PG-MSc-Chemistry': 'https://chat.whatsapp.com/ABCDEFGHIJKLMNOPQRST',
+            'PG-MSc-Astrophysics': 'https://chat.whatsapp.com/ABCDEFGHIJKLMNOPQRST',
+            'PG-MSc-Biochemistry': 'https://chat.whatsapp.com/ABCDEFGHIJKLMNOPQRST',
+            
+            // ===== PG - MCom Groups =====
+            'PG-MCom-Finance': 'https://chat.whatsapp.com/ABCDEFGHIJKLMNOPQRST',
+            'PG-MCom-InternationalBusiness': 'https://chat.whatsapp.com/ABCDEFGHIJKLMNOPQRST'
         };
 
         // =====================================================
-        // 🔍 LOGIC - Get WhatsApp Links for Student
+        // 🔍 FUNCTION - Get WhatsApp Groups
         // =====================================================
         function getWhatsAppGroups(student) {
             const groups = [];
-            const level = student.level; // 'UG' or 'PG'
-            const classType = student.class; // 'BA', 'BSc', 'BCom', 'MA', 'MSc', 'MCom'
+            const level = student.level;
+            const classType = student.class;
             const major = student.major;
             const minor = student.minor;
 
-            // Create keys for major and minor subjects
-            // Format: LEVEL-CLASS-SUBJECT (removing spaces)
+            // Remove spaces from subject names for key
             const majorKey = `${level}-${classType}-${major.replace(/\s/g, '')}`;
             const minorKey = `${level}-${classType}-${minor.replace(/\s/g, '')}`;
 
-            console.log('🔍 Looking for groups with keys:', majorKey, minorKey);
-            console.log('📚 Available groups:', Object.keys(WHATSAPP_LINKS));
+            console.log('🔍 Major Key:', majorKey);
+            console.log('🔍 Minor Key:', minorKey);
 
-            // Add Major Subject Group
+            // Check Major Subject Group
             if (WHATSAPP_LINKS[majorKey]) {
                 groups.push({
                     type: 'Major Subject',
@@ -440,7 +465,7 @@
                 console.log('⚠️ Major group not found for:', majorKey);
             }
 
-            // Add Minor Subject Group
+            // Check Minor Subject Group
             if (minor && WHATSAPP_LINKS[minorKey]) {
                 groups.push({
                     type: 'Minor Subject',
@@ -456,7 +481,7 @@
         }
 
         // =====================================================
-        // 📝 FORM SUBMISSION HANDLER
+        // 📝 FORM SUBMIT
         // =====================================================
         document.getElementById('studentForm').addEventListener('submit', function(e) {
             e.preventDefault();
@@ -468,7 +493,6 @@
             const successMsg = document.getElementById('successMsg');
             const resultBox = document.getElementById('resultBox');
 
-            // Hide previous messages
             errorMsg.classList.remove('show');
             successMsg.classList.remove('show');
             resultBox.classList.remove('show');
@@ -481,12 +505,11 @@
             }
 
             if (!/^\d{10}$/.test(mobileNumber)) {
-                errorMsg.textContent = '⚠️ Please enter a valid 10-digit mobile number!';
+                errorMsg.textContent = '⚠️ Please enter a valid 10-digit mobile number! Example: 9876543210';
                 errorMsg.classList.add('show');
                 return;
             }
 
-            // Check student in database
             const student = STUDENT_DB[admissionNumber];
             
             if (!student) {
@@ -495,14 +518,11 @@
                 return;
             }
 
-            // Success - Show results
             successMsg.textContent = '✅ Student found! Displaying details...';
             successMsg.classList.add('show');
 
-            // Get WhatsApp groups
             const groups = getWhatsAppGroups(student);
 
-            // Prepare JSON data
             const jsonData = {
                 student: {
                     admissionNumber: admissionNumber,
@@ -524,16 +544,10 @@
                 timestamp: new Date().toISOString()
             };
 
-            // Display student details
             displayStudentDetails(student, admissionNumber, mobileNumber);
-            
-            // Display WhatsApp links
             displayWhatsAppLinks(groups);
-            
-            // Display JSON
             document.getElementById('jsonOutput').textContent = JSON.stringify(jsonData, null, 2);
             
-            // Show result box
             resultBox.classList.add('show');
             resultBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
@@ -595,7 +609,7 @@
                 container.innerHTML = `
                     <div style="grid-column: 1/-1; text-align: center; color: #888; padding: 20px; background: #fff; border-radius: 10px;">
                         ⚠️ No WhatsApp groups available for this student.
-                        <br><small style="color: #aaa;">Please check if group links are configured correctly.</small>
+                        <br><small style="color: #aaa;">Please configure group links in the WHATSAPP_LINKS object.</small>
                     </div>
                 `;
                 return;
@@ -613,7 +627,7 @@
         }
 
         // =====================================================
-        // 🔄 AUTO-FILL ON ADMISSION NUMBER BLUR
+        // 🔄 AUTO-FILL
         // =====================================================
         document.getElementById('admissionNumber').addEventListener('blur', function() {
             const admissionNumber = this.value.trim();
@@ -634,13 +648,15 @@
             }
         });
 
-        // =====================================================
-        // 🐛 DEBUG - Console me check karne ke liye
-        // =====================================================
+        // Mobile number - only numbers
+        document.getElementById('mobileNumber').addEventListener('input', function() {
+            this.value = this.value.replace(/\D/g, '').slice(0, 10);
+        });
+
         console.log('✅ System Ready!');
         console.log('📚 Total Students:', Object.keys(STUDENT_DB).length);
         console.log('💬 Total WhatsApp Groups:', Object.keys(WHATSAPP_LINKS).length);
-        console.log('📝 Try admission numbers: 2024001 (UG) or 2024016 (PG)');
+        console.log('📝 Try: 2024001 (UG) or 2024016 (PG)');
     </script>
 </body>
 </html>
