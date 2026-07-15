@@ -1,0 +1,44 @@
+{
+  "BSc":{
+    "Mathematics":"https://chat.whatsapp.com/BSC_MATH",
+    "Physics":"https://chat.whatsapp.com/BSC_PHYSICS",
+    "Chemistry":"https://chat.whatsapp.com/BSC_CHEMISTRY",
+    "Botany":"https://chat.whatsapp.com/BSC_BOTANY",
+    "Zoology":"https://chat.whatsapp.com/BSC_ZOOLOGY",
+    "Computer Science":"https://chat.whatsapp.com/BSC_CS"
+  },
+
+  "BA":{
+    "Hindi":"https://chat.whatsapp.com/BA_HINDI",
+    "English":"https://chat.whatsapp.com/BA_ENGLISH",
+    "History":"https://chat.whatsapp.com/BA_HISTORY",
+    "Political Science":"https://chat.whatsapp.com/BA_POLITICAL",
+    "Geography":"https://chat.whatsapp.com/BA_GEOGRAPHY",
+    "Economics":"https://chat.whatsapp.com/BA_ECONOMICS",
+    "Education":"https://chat.whatsapp.com/BA_EDUCATION"
+  },
+
+  "BCom":{
+    "Commerce":"https://chat.whatsapp.com/BCOM_COMMERCE",
+    "Economics":"https://chat.whatsapp.com/BCOM_ECONOMICS",
+    "Computer Applications":"https://chat.whatsapp.com/BCOM_CA"
+  },
+
+  "MSc":{
+    "Mathematics":"https://chat.whatsapp.com/MSC_MATH",
+    "Physics":"https://chat.whatsapp.com/MSC_PHYSICS",
+    "Chemistry":"https://chat.whatsapp.com/MSC_CHEMISTRY",
+    "Computer Science":"https://chat.whatsapp.com/MSC_CS"
+  },
+
+  "MA":{
+    "Hindi":"https://chat.whatsapp.com/MA_HINDI",
+    "English":"https://chat.whatsapp.com/MA_ENGLISH",
+    "History":"https://chat.whatsapp.com/MA_HISTORY",
+    "Political Science":"https://chat.whatsapp.com/MA_POLITICAL"
+  },
+
+  "MCom":{
+    "Commerce":"https://chat.whatsapp.com/MCOM_COMMERCE"
+  }
+}
