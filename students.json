@@ -1,0 +1,102 @@
+[
+  {
+    "admission":"240001",
+    "mobile":"9876543210",
+    "name":"Rahul Kumar",
+    "father":"Ramesh Kumar",
+    "course":"BSc",
+    "major1":"Mathematics",
+    "major2":"Physics",
+    "minor":"Computer Science"
+  },
+  {
+    "admission":"240002",
+    "mobile":"9876543211",
+    "name":"Anjali Singh",
+    "father":"Suresh Singh",
+    "course":"BA",
+    "major1":"Hindi",
+    "major2":"History",
+    "minor":"Education"
+  },
+  {
+    "admission":"240003",
+    "mobile":"9876543212",
+    "name":"Vikas Yadav",
+    "father":"Rajesh Yadav",
+    "course":"BCom",
+    "major1":"Commerce",
+    "major2":"Economics",
+    "minor":"Computer Applications"
+  },
+  {
+    "admission":"240004",
+    "mobile":"9876543213",
+    "name":"Neha Gupta",
+    "father":"Mukesh Gupta",
+    "course":"BSc",
+    "major1":"Chemistry",
+    "major2":"Botany",
+    "minor":"Zoology"
+  },
+  {
+    "admission":"240005",
+    "mobile":"9876543214",
+    "name":"Arjun Patel",
+    "father":"Mahesh Patel",
+    "course":"BA",
+    "major1":"Political Science",
+    "major2":"Geography",
+    "minor":"Economics"
+  },
+  {
+    "admission":"240006",
+    "mobile":"9876543215",
+    "name":"Pooja Verma",
+    "father":"Rajendra Verma",
+    "course":"MSc",
+    "major1":"Mathematics",
+    "major2":"",
+    "minor":""
+  },
+  {
+    "admission":"240007",
+    "mobile":"9876543216",
+    "name":"Deepak Singh",
+    "father":"Ajay Singh",
+    "course":"MA",
+    "major1":"English",
+    "major2":"",
+    "minor":""
+  },
+  {
+    "admission":"240008",
+    "mobile":"9876543217",
+    "name":"Ritika Sharma",
+    "father":"Sanjay Sharma",
+    "course":"MCom",
+    "major1":"Commerce",
+    "major2":"",
+    "minor":""
+  },
+  {
+    "admission":"240009",
+    "mobile":"9876543218",
+    "name":"Karan Mishra",
+    "father":"Dinesh Mishra",
+    "course":"MSc",
+    "major1":"Physics",
+    "major2":"",
+    "minor":""
+  },
+  {
+    "admission":"240010",
+    "mobile":"9876543219",
+    "name":"Sakshi Gupta",
+    "father":"Mukesh Gupta",
+    "course":"MA",
+    "major1":"History",
+    "major2":"",
+    "minor":""
+  }
+]
